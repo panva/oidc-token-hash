@@ -36,6 +36,6 @@ function generate(token, alg) {
 
 const oidcTokenHash = validate;
 oidcTokenHash.generate = generate;
-oidcTokenHash.validate = validate;
+oidcTokenHash.valid = validate;
 
 module.exports = oidcTokenHash;
