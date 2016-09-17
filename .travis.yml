@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - lts/argon
+  - stable
+script:
+  - node test
+install:
+  - npm install --production
+notifications:
+  email: false
