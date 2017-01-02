@@ -20,9 +20,6 @@ assert.ok( oidcTokenHash('x7vk7f6BvQj0jQHYFIk4ag', 'YmJiZTAwYmYtMzgyOC00NzhkLTky
 assert.ok(!oidcTokenHash('x7vk7f6BvQj0jQHYFIk4ag', '--JiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL-ar_qw5jl3lthwpMjm283aVMQXDmoqqqydDSqJfbhptzw8rUVwkuQbolw'));
 assert.ok(!oidcTokenHash('--vk7f6BvQj0jQHYFIk4--', 'YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL-ar_qw5jl3lthwpMjm283aVMQXDmoqqqydDSqJfbhptzw8rUVwkuQbolw'));
 
-// 256 lengths with padding
-assert.ok( oidcTokenHash('E0GjRojb2VZyS0GbugtR3Q==', 'l7KUM--gWVE2wRoQPj5D61r0byDaXdCsh5ed9SdYih4.q2mJqC4D_q-fOEjclrzOovIk8ESaSbusyFAeRrAroKU'));
-
 // 384 lengths
 assert.ok( oidcTokenHash('rEF91trffQGMQVyqcnZvwddyQGLs6GTF', 'NjlkNjk2ZGUtZWQ1YS00MmQ3LWExOGUtMjNiYTY2MDU4YjJhYmJls2NqVk9DX1z2vDl4MZMeF2XLfMwiXWmRYzUL0t_IY1nWFp6Moeu2GVmBoT_d0Acl4upDyfdGRjeR-ZIsUQ'));
 assert.ok(!oidcTokenHash('rEF91trffQGMQVyqcnZvwddyQGLs6GTF', '--lkNjk2ZGUtZWQ1YS00MmQ3LWExOGUtMjNiYTY2MDU4YjJhYmJls2NqVk9DX1z2vDl4MZMeF2XLfMwiXWmRYzUL0t_IY1nWFp6Moeu2GVmBoT_d0Acl4upDyfdGRjeR-ZIsUQ'));
