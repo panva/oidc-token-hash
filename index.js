@@ -9,6 +9,7 @@ const ALGS = ['sha256', 'sha384', 'sha512'];
 
 function validate(actual, token) {
   if (!actual) return false;
+  actual = actual.replace(/=+$/, '')
   const alg = LENGTHS[actual.length];
   if (!alg) return false;
   return generate(token, alg) === actual;
