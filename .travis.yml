@@ -7,5 +7,3 @@ script:
   - node test
 install:
   - npm install --production
-notifications:
-  email: false
