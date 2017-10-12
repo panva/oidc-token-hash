@@ -6,6 +6,9 @@ node_js:
   - lts/boron
   - stable
 script:
-  - node test
+  - npm run coverage
 install:
   - npm install --production
+after_script:
+  - npm install codecov
+  - ./node_modules/.bin/codecov
