@@ -27,9 +27,9 @@ oidcTokenHash.generate(access_token, 'ES512'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MS
 ```
 
 ## Changelog
-2.0.0 - rather then assuming the alg based on the hash length `#valid()` now requires a third
+- 2.0.0 - rather then assuming the alg based on the hash length `#valid()` now requires a third
   argument with the JOSE header `alg` value, resulting in strict validation
-1.0.0 - initial release
+- 1.0.0 - initial release
 
 [travis-image]: https://img.shields.io/travis/panva/oidc-token-hash/master.svg?style=flat-square&maxAge=7200
 [travis-url]: https://travis-ci.org/panva/oidc-token-hash
