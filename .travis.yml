@@ -7,8 +7,6 @@ node_js:
   - stable
 script:
   - npm run coverage
-install:
-  - npm install --production
 after_script:
   - npm install codecov
   - ./node_modules/.bin/codecov
