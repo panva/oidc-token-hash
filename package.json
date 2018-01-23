@@ -2,29 +2,29 @@
   "name": "oidc-token-hash",
   "version": "2.0.0",
   "description": "Create and validate ID Token hashes from OpenID Connect providers.",
-  "main": "lib/index.js",
-  "scripts": {
-    "test": "node test",
-    "coverage": "nyc node test",
-    "lint": "eslint lib test"
-  },
-  "repository": "panva/oidc-token-hash",
   "keywords": [
-    "openid",
-    "connect",
-    "token",
-    "hash",
     "at_hash",
-    "s_hash",
     "c_hash",
+    "connect",
+    "hash",
+    "openid",
+    "s_hash",
+    "token",
     "validate"
   ],
-  "author": "Filip Skokan",
-  "license": "MIT",
+  "homepage": "https://github.com/panva/oidc-token-hash",
   "bugs": {
     "url": "https://github.com/panva/oidc-token-hash/issues"
   },
-  "homepage": "https://github.com/panva/oidc-token-hash",
+  "license": "MIT",
+  "author": "Filip Skokan",
+  "main": "lib/index.js",
+  "repository": "panva/oidc-token-hash",
+  "scripts": {
+    "coverage": "nyc node test",
+    "lint": "eslint lib test",
+    "test": "node test"
+  },
   "dependencies": {
     "base64url": "^2.0.0"
   },
