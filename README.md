@@ -31,7 +31,7 @@ oidcTokenHash.generate(access_token, 'ES512'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MS
   argument with the JOSE header `alg` value, resulting in strict validation
 - 1.0.0 - initial release
 
-[travis-image]: https://img.shields.io/travis/panva/oidc-token-hash/master.svg?style=flat-square&maxAge=7200
-[travis-url]: https://travis-ci.org/panva/oidc-token-hash
+[travis-image]: https://api.travis-ci.com/panva/oidc-token-hash.svg?branch=master
+[travis-url]: https://travis-ci.com/panva/oidc-token-hash
 [codecov-image]: https://img.shields.io/codecov/c/github/panva/oidc-token-hash/master.svg?style=flat-square&maxAge=7200
 [codecov-url]: https://codecov.io/gh/panva/oidc-token-hash

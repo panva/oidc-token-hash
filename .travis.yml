@@ -2,7 +2,6 @@ language: node_js
 dist: trusty
 sudo: false
 node_js:
-  - lts/argon
   - lts/boron
   - lts/carbon
   - stable
