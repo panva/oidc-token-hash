@@ -33,5 +33,5 @@ oidcTokenHash.generate(access_token, 'ES512'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MS
 
 [travis-image]: https://api.travis-ci.com/panva/oidc-token-hash.svg?branch=master
 [travis-url]: https://travis-ci.com/panva/oidc-token-hash
-[codecov-image]: https://img.shields.io/codecov/c/github/panva/oidc-token-hash/master.svg?style=flat-square&maxAge=7200
+[codecov-image]: https://img.shields.io/codecov/c/github/panva/oidc-token-hash/master.svg
 [codecov-url]: https://codecov.io/gh/panva/oidc-token-hash
