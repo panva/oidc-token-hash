@@ -26,7 +26,7 @@
     "test": "node test"
   },
   "dependencies": {
-    "base64url": "^2.0.0"
+    "base64-url": "^2.2.0"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
