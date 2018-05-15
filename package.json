@@ -1,6 +1,6 @@
 {
   "name": "oidc-token-hash",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Create and validate ID Token hashes from OpenID Connect providers.",
   "keywords": [
     "at_hash",
@@ -23,16 +23,20 @@
   "scripts": {
     "coverage": "nyc node test",
     "lint": "eslint lib test",
+    "lint-fix": "eslint lib test --fix",
     "test": "node test"
   },
   "dependencies": {
     "base64-url": "^2.2.0"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^7.2.0",
-    "eslint-plugin-import": "^1.16.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.11.0",
     "nyc": "^11.2.1"
+  },
+  "engines": {
+    "node": ">=6.9.0"
   },
   "nyc": {
     "reporter": [

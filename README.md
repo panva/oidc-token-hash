@@ -27,6 +27,7 @@ oidcTokenHash.generate(access_token, 'ES512'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MS
 ```
 
 ## Changelog
+- 3.0.0 - drop lts/4 support, replace base64url dependency
 - 2.0.0 - rather then assuming the alg based on the hash length `#valid()` now requires a third
   argument with the JOSE header `alg` value, resulting in strict validation
 - 1.0.0 - initial release
