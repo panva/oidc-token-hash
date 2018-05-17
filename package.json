@@ -1,6 +1,6 @@
 {
   "name": "oidc-token-hash",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Create and validate ID Token hashes from OpenID Connect providers.",
   "keywords": [
     "at_hash",
@@ -27,7 +27,7 @@
     "test": "node test"
   },
   "dependencies": {
-    "base64-url": "^2.2.0"
+    "base64url": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
