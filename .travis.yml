@@ -1,9 +1,8 @@
 language: node_js
-dist: trusty
-sudo: false
 node_js:
   - lts/boron
   - lts/carbon
+  - lts/dubnium
   - stable
 script:
   - npm run coverage
