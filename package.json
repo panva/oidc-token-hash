@@ -16,18 +16,15 @@
   "bugs": {
     "url": "https://github.com/panva/oidc-token-hash/issues"
   },
+  "repository": "panva/oidc-token-hash",
   "license": "MIT",
   "author": "Filip Skokan",
   "main": "lib/index.js",
-  "repository": "panva/oidc-token-hash",
   "scripts": {
     "coverage": "nyc node test",
     "lint": "eslint lib test",
     "lint-fix": "eslint lib test --fix",
     "test": "node test"
-  },
-  "dependencies": {
-    "base64url": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

@@ -27,6 +27,7 @@ oidcTokenHash.generate(access_token, 'ES512'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MS
 ```
 
 ## Changelog
+- 3.0.2 - removed `base64url` dependency
 - 3.0.1 - `base64url` comeback
 - 3.0.0 - drop lts/4 support, replace base64url dependency
 - 2.0.0 - rather then assuming the alg based on the hash length `#valid()` now requires a third
