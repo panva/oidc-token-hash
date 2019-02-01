@@ -1,6 +1,6 @@
 {
   "name": "oidc-token-hash",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Create and validate ID Token hashes from OpenID Connect providers.",
   "keywords": [
     "at_hash",
