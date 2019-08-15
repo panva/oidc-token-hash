@@ -1,7 +1,5 @@
 # oidc-token-hash
 
-[![build][travis-image]][travis-url] [![codecov][codecov-image]][codecov-url]
-
 oidc-token-hash validates (and generates) ID Token `_hash` claims such as `at_hash` or `c_hash`.
 
 ## Usage
@@ -33,8 +31,3 @@ oidcTokenHash.generate(access_token, 'ES512'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MS
 - 2.0.0 - rather then assuming the alg based on the hash length `#valid()` now requires a third
   argument with the JOSE header `alg` value, resulting in strict validation
 - 1.0.0 - initial release
-
-[travis-image]: https://api.travis-ci.com/panva/oidc-token-hash.svg?branch=master
-[travis-url]: https://travis-ci.com/panva/oidc-token-hash
-[codecov-image]: https://img.shields.io/codecov/c/github/panva/oidc-token-hash/master.svg
-[codecov-url]: https://codecov.io/gh/panva/oidc-token-hash
