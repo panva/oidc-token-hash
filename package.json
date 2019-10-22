@@ -27,10 +27,10 @@
     "test": "node test"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.11.0",
-    "nyc": "^12.0.2"
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nyc": "^14.1.1"
   },
   "engines": {
     "node": ">=6.9.0"

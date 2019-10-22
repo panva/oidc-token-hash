@@ -1,0 +1,51 @@
+name: Continuous Integration
+
+on:
+  push:
+    paths-ignore:
+      - '**.yml'
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.yml'
+      - '**.md'
+  schedule:
+    - cron:  0 9 * * 1-5
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm install
+      - run: npm run lint
+
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node-version:
+          - 6.9.0
+          - 6
+          - 8.0.0
+          - 8
+          - 10.0.0
+          - 10
+          - 12.0.0
+          - 12
+          - 13.0.0
+          - 13
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macOS-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run test
