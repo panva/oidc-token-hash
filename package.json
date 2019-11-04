@@ -1,17 +1,6 @@
 {
   "name": "oidc-token-hash",
   "version": "3.0.2",
-  "description": "Create and validate ID Token hashes from OpenID Connect providers.",
-  "keywords": [
-    "at_hash",
-    "c_hash",
-    "connect",
-    "hash",
-    "openid",
-    "s_hash",
-    "token",
-    "validate"
-  ],
   "homepage": "https://github.com/panva/oidc-token-hash",
   "bugs": {
     "url": "https://github.com/panva/oidc-token-hash/issues"
@@ -33,7 +22,7 @@
     "nyc": "^14.1.1"
   },
   "engines": {
-    "node": ">=6.9.0"
+    "node": "^10.13.0 || >=12.0.0"
   },
   "nyc": {
     "reporter": [
