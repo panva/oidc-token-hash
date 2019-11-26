@@ -8,6 +8,9 @@
   "repository": "panva/oidc-token-hash",
   "license": "MIT",
   "author": "Filip Skokan",
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "scripts": {
     "coverage": "nyc node test",

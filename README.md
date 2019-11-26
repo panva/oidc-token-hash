@@ -40,10 +40,11 @@ oidcTokenHash.generate(access_token, 'RS256'); // => 'x7vk7f6BvQj0jQHYFIk4ag'
 oidcTokenHash.generate(access_token, 'HS384'); // => 'ups_76_7CCye_J1WIyGHKVG7AAs2olYm'
 oidcTokenHash.generate(access_token, 'ES512'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ'
 oidcTokenHash.generate(access_token, 'EdDSA', 'Ed25519'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ'
-oidcTokenHash.generate(access_token, 'EdDSA', 'Ed448'); // => 'jxsy68_eG9-91VnHsZ2VnA'
+oidcTokenHash.generate(access_token, 'EdDSA', 'Ed448'); // => 'jxsy68_eG9-91VnHsZ2VnCr_WqDMv4nspiSuUPRdNZnv1y5lNV3rPVYYWNiY_TbUB1JRwlgiDTzZ'
 ```
 
 ## Changelog
+- 5.0.0 - fixed `Ed448` and `shake256` to use 114 bytes output
 - 4.0.0 - using `sha512` for `Ed25519` and `shake256` for `Ed448`, refactored API, removed handling of `none` JWS alg
 - 3.0.2 - removed `base64url` dependency
 - 3.0.1 - `base64url` comeback

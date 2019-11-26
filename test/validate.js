@@ -1,9 +1,8 @@
 const assert = require('assert');
-const crypto = require('crypto');
 
 const oidcTokenHash = require('..');
 
-const shake256 = crypto.getHashes().includes('shake256');
+const shake256 = require('../lib/shake256');
 
 /* eslint-disable max-len, space-in-parens */
 
@@ -130,7 +129,13 @@ assert.throws(() => oidcTokenHash.validate(
   'N2IwZmM5Y2YtZWJiYS00ZjA5LTkyZTktZTc0MjY5NDlmZDUwv7m2UfVNLyXYhcEicgYZ5LsQbZ7huJNibUjqAmPAWhyyxWRgXdZp4iTl2lE2ezdC3W-x93gkIg00rNok1MYgqA',
   'EdDSA',
   'Ed448'
-), { name: /AssertionError/, message: shake256 ? 'at_hash mismatch, expected wvAJtH9mg9RPIhRyZ7Ji-w, got: HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM' : 'at_hash could not be validated (Digest method not supported)' });
+), {
+  name: /AssertionError/,
+  message:
+  shake256
+    ? 'at_hash mismatch, expected wvAJtH9mg9RPIhRyZ7Ji-w4ihw6NuRLxhAF6_6X37fVXSLdpyxxTbc32iOHKGMap-rzC0-4H3A5Z, got: HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM'
+    : 'at_hash could not be validated (Ed448 *_hash calculation is not supported in your Node.js runtime version)',
+});
 assert.throws(() => oidcTokenHash.validate(
   { claim: 'at_hash', source: 'access_token' },
   'HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM',
