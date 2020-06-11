@@ -26,7 +26,6 @@ assert.throws(() => oidcTokenHash.validate(
   'madeupalg'
 ), { name: /AssertionError/, message: 'at_hash could not be validated (unrecognized or invalid JWS algorithm provided)' });
 
-
 // non correct lengths
 assert.throws(() => oidcTokenHash.validate(
   { claim: 'at_hash', source: 'access_token' },
