@@ -36,6 +36,8 @@ jobs:
           - 13
           - 14.0.0
           - 14
+          - 15.0.1
+          - 15
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
