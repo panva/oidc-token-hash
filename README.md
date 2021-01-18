@@ -44,6 +44,7 @@ oidcTokenHash.generate(access_token, 'EdDSA', 'Ed448'); // => 'jxsy68_eG9-91VnHs
 ```
 
 ## Changelog
+- 5.0.1 - use `base64url` native encoding in Node.js when available
 - 5.0.0 - fixed `Ed448` and `shake256` to use 114 bytes output
 - 4.0.0 - using `sha512` for `Ed25519` and `shake256` for `Ed448`, refactored API, removed handling of `none` JWS alg
 - 3.0.2 - removed `base64url` dependency
