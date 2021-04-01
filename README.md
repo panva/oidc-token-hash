@@ -1,8 +1,6 @@
 # oidc-token-hash
 
-oidc-token-hash validates (and generates) ID Token `_hash` claims such as `at_hash` or `c_hash`,
-shared component for [oidc-provider](https://github.com/panva/node-oidc-provider) and
-[openid-client](https://github.com/panva/node-openid-client).
+oidc-token-hash validates (and generates) ID Token `_hash` claims such as `at_hash` or `c_hash`
 
 > Its [`*_hash`] value is the base64url encoding of the left-most half of the hash of the octets of
 > the ASCII representation of the `token` / `state` / `code` value, where the hash algorithm used is
