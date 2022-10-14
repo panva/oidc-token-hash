@@ -2,15 +2,10 @@ name: Continuous Integration
 
 on:
   push:
-    paths-ignore:
-      - '**.yml'
-      - '**.md'
   pull_request:
-    paths-ignore:
-      - '**.yml'
-      - '**.md'
   schedule:
     - cron:  0 13 * * 1-5
+  workflow_dispatch:
 
 jobs:
   lint:
