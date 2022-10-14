@@ -3,27 +3,14 @@ name: Continuous Integration
 on:
   push:
   pull_request:
-  schedule:
-    - cron:  0 13 * * 1-5
   workflow_dispatch:
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 12
-      - run: npx panva/npm-install-retry
-      - run: npm run lint
-
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version:
-          - lts/-2
           - lts/-1
           - lts/*
           - current
@@ -32,5 +19,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npx panva/npm-install-retry
+          check-latest: true
+          cache: 'npm'
+      - run: npm clean-install
       - run: npm run test
