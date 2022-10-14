@@ -16,8 +16,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 12
       - run: npx panva/npm-install-retry
@@ -28,20 +28,13 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 10.13.0
-          - 10
-          - 12.0.0
-          - 12
-          - 13.0.0
-          - 13
-          - 14.0.0
-          - 14
-          - 15.0.1
-          - 15
-          - '>=15'
+          - lts/-2
+          - lts/-1
+          - lts/*
+          - current
     steps:
       - uses: actions/checkout@master
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npx panva/npm-install-retry
