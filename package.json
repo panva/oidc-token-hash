@@ -1,6 +1,6 @@
 {
   "name": "oidc-token-hash",
-  "version": "5.0.3",
+  "version": "6.0.3",
   "homepage": "https://github.com/panva/oidc-token-hash",
   "bugs": {
     "url": "https://github.com/panva/oidc-token-hash/issues"
@@ -25,7 +25,7 @@
     "nyc": "^15.1.0"
   },
   "engines": {
-    "node": "^10.13.0 || >=12.0.0"
+    "node": ">=12.20.0"
   },
   "nyc": {
     "reporter": [
