@@ -17,6 +17,8 @@ oidc-token-hash validates (and generates) ID Token `_hash` claims such as `at_ha
 | HS512, RS512, PS512, ES512 | sha512 | |
 | EdDSA w/ Ed25519 curve | sha512 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
 | EdDSA w/ Ed448 curve | shake256 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
+| Ed25519 | sha512 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
+| Ed448 | shake256 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
 
 ## Usage
 
@@ -38,7 +40,9 @@ oidcTokenHash.generate(access_token, 'RS256'); // => 'x7vk7f6BvQj0jQHYFIk4ag'
 oidcTokenHash.generate(access_token, 'HS384'); // => 'ups_76_7CCye_J1WIyGHKVG7AAs2olYm'
 oidcTokenHash.generate(access_token, 'ES512'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ'
 oidcTokenHash.generate(access_token, 'EdDSA', 'Ed25519'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ'
+oidcTokenHash.generate(access_token, 'Ed25519'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ'
 oidcTokenHash.generate(access_token, 'EdDSA', 'Ed448'); // => 'jxsy68_eG9-91VnHsZ2VnCr_WqDMv4nspiSuUPRdNZnv1y5lNV3rPVYYWNiY_TbUB1JRwlgiDTzZ'
+oidcTokenHash.generate(access_token, 'Ed448'); // => 'jxsy68_eG9-91VnHsZ2VnCr_WqDMv4nspiSuUPRdNZnv1y5lNV3rPVYYWNiY_TbUB1JRwlgiDTzZ'
 ```
 
 ## Changelog
