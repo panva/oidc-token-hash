@@ -17,6 +17,8 @@ oidc-token-hash validates (and generates) ID Token `_hash` claims such as `at_ha
 | HS512, RS512, PS512, ES512 | sha512 | |
 | EdDSA w/ Ed25519 curve | sha512 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
 | EdDSA w/ Ed448 curve | shake256 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
+| Ed25519 | sha512 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
+| Ed448 | shake256 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
 
 ## Usage
 
@@ -28,6 +30,7 @@ const access_token = 'YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x
 
 oidcTokenHash.validate({ claim: 'at_hash', source: 'access_token' }, 'x7vk7f6BvQj0jQHYFIk4ag', access_token, 'RS256'); // => does not throw
 oidcTokenHash.validate({ claim: 'at_hash', source: 'access_token' }, 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ', access_token, 'EdDSA', 'Ed25519'); // => does not throw
+oidcTokenHash.validate({ claim: 'at_hash', source: 'access_token' }, 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ', access_token, 'Ed25519'); // => does not throw
 oidcTokenHash.validate({ claim: 'at_hash', source: 'access_token' }, 'x7vk7f6BvQj0jQHYFIk4ag', 'foobar', 'RS256'); // => throws AssertionError, message: at_hash mismatch, expected w6uP8Tcg6K2QR905Rms8iQ, got: x7vk7f6BvQj0jQHYFIk4ag
 ```
 
@@ -37,11 +40,14 @@ Generating
 oidcTokenHash.generate(access_token, 'RS256'); // => 'x7vk7f6BvQj0jQHYFIk4ag'
 oidcTokenHash.generate(access_token, 'HS384'); // => 'ups_76_7CCye_J1WIyGHKVG7AAs2olYm'
 oidcTokenHash.generate(access_token, 'ES512'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ'
+oidcTokenHash.generate(access_token, 'Ed25519'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ'
 oidcTokenHash.generate(access_token, 'EdDSA', 'Ed25519'); // => 'EGEAhGYyfuwDaVTifvrWSoD5MSy_5hZPy6I7Vm-7pTQ'
+oidcTokenHash.generate(access_token, 'Ed448'); // => 'jxsy68_eG9-91VnHsZ2VnCr_WqDMv4nspiSuUPRdNZnv1y5lNV3rPVYYWNiY_TbUB1JRwlgiDTzZ'
 oidcTokenHash.generate(access_token, 'EdDSA', 'Ed448'); // => 'jxsy68_eG9-91VnHsZ2VnCr_WqDMv4nspiSuUPRdNZnv1y5lNV3rPVYYWNiY_TbUB1JRwlgiDTzZ'
 ```
 
 ## Changelog
+- 5.1.0 - add support for Ed25519 and Ed448 JWS Algorithm Identifiers
 - 5.0.2 - avoid use of deprecated String.prototype.substr
 - 5.0.1 - use `base64url` native encoding in Node.js when available
 - 5.0.0 - fixed `Ed448` and `shake256` to use 114 bytes output

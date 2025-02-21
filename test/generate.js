@@ -22,7 +22,9 @@ assert.equal('p2LHG4H-8pYDc0hyVOo3iIHvZJUqe9tbj3jESOuXbkY', oidcTokenHash.genera
 assert.equal('p2LHG4H-8pYDc0hyVOo3iIHvZJUqe9tbj3jESOuXbkY', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'HS512'));
 
 assert.equal('p2LHG4H-8pYDc0hyVOo3iIHvZJUqe9tbj3jESOuXbkY', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'EdDSA', 'Ed25519'));
+assert.equal('p2LHG4H-8pYDc0hyVOo3iIHvZJUqe9tbj3jESOuXbkY', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'Ed25519'));
 
 if (shake256) {
   assert.equal('sB_U72jyb0WgtX8TsVoqJnm6CD295W9gfSDRxkilB3LAL7REi9JYutRW_s1yE4lD8cOfMZf83gi4', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'EdDSA', 'Ed448'));
+  assert.equal('sB_U72jyb0WgtX8TsVoqJnm6CD295W9gfSDRxkilB3LAL7REi9JYutRW_s1yE4lD8cOfMZf83gi4', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'Ed448'));
 }

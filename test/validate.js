@@ -115,6 +115,12 @@ assert(!oidcTokenHash.validate(
   'EdDSA',
   'Ed25519'
 ));
+assert(!oidcTokenHash.validate(
+  { claim: 'at_hash', source: 'access_token' },
+  'HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM',
+  'N2IwZmM5Y2YtZWJiYS00ZjA5LTkyZTktZTc0MjY5NDlmZDUwv7m2UfVNLyXYhcEicgYZ5LsQbZ7huJNibUjqAmPAWhyyxWRgXdZp4iTl2lE2ezdC3W-x93gkIg00rNok1MYgqA',
+  'Ed25519'
+));
 assert.throws(() => oidcTokenHash.validate(
   { claim: 'at_hash', source: 'access_token' },
   'HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM',
@@ -127,6 +133,18 @@ assert.throws(() => oidcTokenHash.validate(
   'HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM',
   'N2IwZmM5Y2YtZWJiYS00ZjA5LTkyZTktZTc0MjY5NDlmZDUwv7m2UfVNLyXYhcEicgYZ5LsQbZ7huJNibUjqAmPAWhyyxWRgXdZp4iTl2lE2ezdC3W-x93gkIg00rNok1MYgqA',
   'EdDSA',
+  'Ed448'
+), {
+  name: /AssertionError/,
+  message:
+  shake256
+    ? /at_hash mismatch, expected wvAJtH9mg9RPIhRyZ7Ji-w4ihw6NuRLxhAF6_6X37fVXSLdpyxxTbc32iOHKGMap-rzC0-4H3A5Z, got: HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM/
+    : /not supported in your Node.js runtime version/,
+});
+assert.throws(() => oidcTokenHash.validate(
+  { claim: 'at_hash', source: 'access_token' },
+  'HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM',
+  'N2IwZmM5Y2YtZWJiYS00ZjA5LTkyZTktZTc0MjY5NDlmZDUwv7m2UfVNLyXYhcEicgYZ5LsQbZ7huJNibUjqAmPAWhyyxWRgXdZp4iTl2lE2ezdC3W-x93gkIg00rNok1MYgqA',
   'Ed448'
 ), {
   name: /AssertionError/,
