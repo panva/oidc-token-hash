@@ -1,5 +1,7 @@
 name: Continuous Integration
 
+permissions: {}
+
 on:
   push:
   pull_request:
