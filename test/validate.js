@@ -2,8 +2,6 @@ const assert = require('assert');
 
 const oidcTokenHash = require('..');
 
-const shake256 = require('../lib/shake256');
-
 /* eslint-disable max-len, space-in-parens */
 
 assert.throws(() => oidcTokenHash.validate(
@@ -136,10 +134,7 @@ assert.throws(() => oidcTokenHash.validate(
   'Ed448'
 ), {
   name: /AssertionError/,
-  message:
-  shake256
-    ? /at_hash mismatch, expected wvAJtH9mg9RPIhRyZ7Ji-w4ihw6NuRLxhAF6_6X37fVXSLdpyxxTbc32iOHKGMap-rzC0-4H3A5Z, got: HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM/
-    : /not supported in your Node.js runtime version/,
+  message: /at_hash mismatch, expected wvAJtH9mg9RPIhRyZ7Ji-w4ihw6NuRLxhAF6_6X37fVXSLdpyxxTbc32iOHKGMap-rzC0-4H3A5Z, got: HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM/,
 });
 assert.throws(() => oidcTokenHash.validate(
   { claim: 'at_hash', source: 'access_token' },
@@ -148,10 +143,7 @@ assert.throws(() => oidcTokenHash.validate(
   'Ed448'
 ), {
   name: /AssertionError/,
-  message:
-  shake256
-    ? /at_hash mismatch, expected wvAJtH9mg9RPIhRyZ7Ji-w4ihw6NuRLxhAF6_6X37fVXSLdpyxxTbc32iOHKGMap-rzC0-4H3A5Z, got: HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM/
-    : /not supported in your Node.js runtime version/,
+  message: /at_hash mismatch, expected wvAJtH9mg9RPIhRyZ7Ji-w4ihw6NuRLxhAF6_6X37fVXSLdpyxxTbc32iOHKGMap-rzC0-4H3A5Z, got: HgIOjpEKMhvtwzZvjUdUmMYayc0gOvaxkZEsautS1KM/,
 });
 assert.throws(() => oidcTokenHash.validate(
   { claim: 'at_hash', source: 'access_token' },

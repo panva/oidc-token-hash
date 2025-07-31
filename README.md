@@ -47,6 +47,7 @@ oidcTokenHash.generate(access_token, 'EdDSA', 'Ed448'); // => 'jxsy68_eG9-91VnHs
 ```
 
 ## Changelog
+- 5.1.1 - remove conditional shake256 check
 - 5.1.0 - add support for Ed25519 and Ed448 JWS Algorithm Identifiers
 - 5.0.2 - avoid use of deprecated String.prototype.substr
 - 5.0.1 - use `base64url` native encoding in Node.js when available
