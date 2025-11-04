@@ -16,9 +16,10 @@ oidc-token-hash validates (and generates) ID Token `_hash` claims such as `at_ha
 | HS384, RS384, PS384, ES384 | sha384 | |
 | HS512, RS512, PS512, ES512 | sha512 | |
 | EdDSA w/ Ed25519 curve | sha512 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
-| EdDSA w/ Ed448 curve | shake256 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
+| EdDSA w/ Ed448 curve | shake256(m, 114) | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
 | Ed25519 | sha512 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
-| Ed448 | shake256 | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
+| Ed448 | shake256(m, 114) | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
+| ML-DSA-44, ML-DSA-65, ML-DSA-87 | shake256(m, 64) | [connect/issues#1125](https://bitbucket.org/openid/connect/issues/1125) |
 
 ## Usage
 
@@ -47,6 +48,7 @@ oidcTokenHash.generate(access_token, 'EdDSA', 'Ed448'); // => 'jxsy68_eG9-91VnHs
 ```
 
 ## Changelog
+- 5.2.0 - add support ML-DSA JWS Algorithm Identifiers
 - 5.1.1 - remove conditional shake256 check
 - 5.1.0 - add support for Ed25519 and Ed448 JWS Algorithm Identifiers
 - 5.0.2 - avoid use of deprecated String.prototype.substr

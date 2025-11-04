@@ -4,6 +4,10 @@ const oidcTokenHash = require('..');
 
 /* eslint-disable max-len */
 
+assert.equal('sB_U72jyb0WgtX8TsVoqJnm6CD295W9gfSDRxkilB3I', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'ML-DSA-44'));
+assert.equal('sB_U72jyb0WgtX8TsVoqJnm6CD295W9gfSDRxkilB3I', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'ML-DSA-65'));
+assert.equal('sB_U72jyb0WgtX8TsVoqJnm6CD295W9gfSDRxkilB3I', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'ML-DSA-87'));
+
 assert.equal('xsZZrUssMXjL3FBlzoSh2g', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'RS256'));
 assert.equal('xsZZrUssMXjL3FBlzoSh2g', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'PS256'));
 assert.equal('xsZZrUssMXjL3FBlzoSh2g', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'ES256'));
@@ -24,4 +28,4 @@ assert.equal('p2LHG4H-8pYDc0hyVOo3iIHvZJUqe9tbj3jESOuXbkY', oidcTokenHash.genera
 assert.equal('p2LHG4H-8pYDc0hyVOo3iIHvZJUqe9tbj3jESOuXbkY', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'Ed25519'));
 
 assert.equal('sB_U72jyb0WgtX8TsVoqJnm6CD295W9gfSDRxkilB3LAL7REi9JYutRW_s1yE4lD8cOfMZf83gi4', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'EdDSA', 'Ed448'));
-  assert.equal('sB_U72jyb0WgtX8TsVoqJnm6CD295W9gfSDRxkilB3LAL7REi9JYutRW_s1yE4lD8cOfMZf83gi4', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'Ed448'));
+assert.equal('sB_U72jyb0WgtX8TsVoqJnm6CD295W9gfSDRxkilB3LAL7REi9JYutRW_s1yE4lD8cOfMZf83gi4', oidcTokenHash.generate('YmJiZTAwYmYtMzgyOC00NzhkLTkyOTItNjJjNDM3MGYzOWIy9sFhvH8K_x8UIHj1osisS57f5DduL', 'Ed448'));
