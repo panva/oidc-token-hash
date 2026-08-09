@@ -4,36 +4,15 @@ permissions: {}
 
 on:
   push:
-    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+    tags: ["v[0-9]+.[0-9]+.[0-9]+"]
 
 jobs:
-  npm:
-    runs-on: ubuntu-latest
+  release:
     permissions:
-      contents: read
-      id-token: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          fetch-depth: 0
-      - name: Setup node
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: lts/*
-          registry-url: https://registry.npmjs.org
-      - run: npm install -g npm@latest
-      - run: npm stage publish
-
-  cleanup:
-    needs:
-      - npm
-    runs-on: ubuntu-latest
-    permissions:
+      actions: read
       contents: write
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          fetch-depth: 0
-      - run: git push origin HEAD:main
+      id-token: write
+    uses: panva/.github/.github/workflows/npm-release.yml@main
+    with:
+      github_release: false
+      maintenance_branch: false
