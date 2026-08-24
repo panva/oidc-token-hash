@@ -13,3 +13,4 @@
 
 require('./validate');
 require('./generate');
+require('./property');
