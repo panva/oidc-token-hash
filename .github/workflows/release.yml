@@ -13,7 +13,7 @@ jobs:
       contents: write # Required to integrate release branches.
       discussions: write # Required by the reusable workflow for release discussions.
       id-token: write # Required for npm trusted publishing.
-    uses: panva/.github/.github/workflows/npm-release.yml@a4736719ab55fdedeee01739c175e01bff32386f # v1
+    uses: panva/.github/.github/workflows/npm-release.yml@75ad63f5730195dd3e9ec22dbbf29101c99d8501 # v4
     with:
       github_release: false
       maintenance_branch: false
